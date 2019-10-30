@@ -1,0 +1,33 @@
+[System]
+Name='In'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[-6 6]
+NumMFs=3
+MF1='Neutral':'pimf',[-2.37 -1.1 -0.9 0.492063492063492]
+MF2='High_arousal':'smf',[-1 2]
+MF3='Low_arousal':'zmf',[-4 -1]
+
+[Output1]
+Name='output1'
+Range=[-0.0016 0.0008]
+NumMFs=3
+MF1='Inhibitory':'pimf',[-0.001523 -0.0008767 -0.0007085 2.4e-06]
+MF2='Excitatory':'pimf',[3.575e-05 0.0003468 0.0004268 0.0007558]
+MF3='Neutral':'pimf',[-0.0004105 -7e-06 7e-06 0.0004105]
+
+[Rules]
+1, 3 (1) : 1
+2, 1 (1) : 1
+3, 3 (1) : 1
